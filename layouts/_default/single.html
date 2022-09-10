@@ -16,9 +16,11 @@
         {{ .Render "stats" }}
       </footer>
     </div>
+    <!-- DO NOT USE COMMENTS UNTIL REFINE THE SOLUTION
     {{ if not ( eq .Params.comments false) }}
-      {{ .Render "comments" }}
+      {{ partial "comments.html" .}}
     {{ end }}
+    -->
   </article>
   <div class="pagination">
     {{ if .NextInSection }}

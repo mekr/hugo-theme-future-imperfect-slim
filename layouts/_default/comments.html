@@ -34,12 +34,14 @@
           <input type='hidden' name='fields[replyThread]' value=''>
           <input type='hidden' name='fields[replyID]' value=''>
           <input type='hidden' name='fields[replyName]' value=''>
+          <input type="hidden" name="options[slug]" value="{{ .File.BaseFileName }}">
 
           {{/* User input fields */}}
           <input required name='fields[name]' type='text' placeholder='{{ i18n "form_name" }}'>
           <input name='fields[website]' type='text' placeholder='{{ i18n "form_website" }}'>
           <input required name='fields[email]' type='email' placeholder='{{ i18n "form_email" }}'>
-          <textarea required name='fields[body]' placeholder='{{ i18n "form_body" }}' rows='10'></textarea>
+          {{/* V3 <textarea required name='fields[body]' placeholder='{{ i18n "form_body" }}' rows='10'></textarea> */}}
+          <textarea required name='fields[comment]' placeholder='{{ i18n "form_body" }}' rows='10'></textarea>
 
           {{/* reCAPTHCA v2 */}}
           {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}

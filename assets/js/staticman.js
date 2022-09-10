@@ -12,7 +12,16 @@
       let username = '{{ .username }}';
       let repo = '{{ .repo }}';
       let branch = '{{ .branch }}';
-      let url = ['https:/', api, 'v3/entry', gitProvider, username, repo, branch, 'comments'].join('/');
+      //let url = ['https:/', api, 'v3/entry', gitProvider, username, repo, branch, 'comments'].join('/');
+      
+      let version = '{{ .version }}';
+      let url = '';
+      if (version == 2) {
+        url = [api, 'v2/entry', username, repo, branch, 'comments'].join('/');
+      }
+      else {
+        url = [api, 'v3/entry', gitProvider, username, repo, branch, 'comments'].join('/');
+      }
 
       // Convert form fields to a JSON-friendly string
       let formObj = Object.fromEntries(new FormData(form));

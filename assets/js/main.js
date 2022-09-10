@@ -1,3 +1,8 @@
+function changeValue(elementName, newValue){
+  document.getElementsByName(elementName)[0].value=newValue;
+  window.location.hash = "#comment-form";
+};
+
 // Flyout Menu Functions
 var toggles = {
   ".search-toggle": "#search-input",
